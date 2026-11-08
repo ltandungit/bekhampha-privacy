@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghi Chú – Hỗ trợ | Support</title>
+  <meta name="description" content="Trang hỗ trợ ứng dụng Ghi Chú – AI Note App. Support page for Ghi Chú app.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6C63FF;
+      --primary-light: #9B94FF;
+      --primary-dark: #4A42D4;
+      --surface: #F8F7FF;
+      --card: #FFFFFF;
+      --text-primary: #1A1A2E;
+      --text-secondary: #6B6B8A;
+      --divider: #E8E8F0;
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--surface);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Hero ─────────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 64px 24px 48px;
+    }
+
+    .hero-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── Language Toggle ──────────────────────────────────────────── */
+    .lang-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .lang-btn {
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 99px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: #fff;
+      color: var(--primary);
+      border-color: #fff;
+    }
+
+    .lang-btn:hover:not(.active) {
+      background: rgba(255,255,255,0.35);
+    }
+
+    /* ── Container ────────────────────────────────────────────────── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    /* ── Section ──────────────────────────────────────────────────── */
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    /* ── Contact Card ─────────────────────────────────────────────── */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: background 0.15s;
+    }
+
+    .contact-item:hover {
+      background: var(--surface);
+    }
+
+    .contact-item + .contact-item {
+      border-top: 1px solid var(--divider);
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-right: 14px;
+      flex-shrink: 0;
+    }
+
+    .contact-icon.email { background: rgba(108,99,255,0.1); }
+    .contact-icon.website { background: rgba(78,205,196,0.1); }
+
+    .contact-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .contact-value {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .contact-arrow {
+      margin-left: auto;
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+    }
+
+    /* ── FAQ ──────────────────────────────────────────────────────── */
+    .faq-item {
+      border-top: 1px solid var(--divider);
+    }
+
+    .faq-item:first-child {
+      border-top: none;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: inherit;
+      line-height: 1.5;
+    }
+
+    .faq-question:hover {
+      background: var(--surface);
+    }
+
+    .faq-chevron {
+      margin-left: auto;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 20px 18px 52px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ── Features Grid ────────────────────────────────────────────── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .feature-emoji {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .feature-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .feature-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* ── Footer ───────────────────────────────────────────────────── */
+    .footer {
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--divider);
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── i18n visibility ──────────────────────────────────────────── */
+    [data-lang="en"] { display: none; }
+
+    body.lang-en [data-lang="vi"] { display: none; }
+    body.lang-en [data-lang="en"] { display: block; }
+    body.lang-en .contact-item[data-lang="en"] { display: flex; }
+    body.lang-en .faq-item[data-lang="en"] { display: block; }
+
+    body:not(.lang-en) [data-lang="vi"] { display: block; }
+    body:not(.lang-en) .contact-item[data-lang="vi"] { display: flex; }
+    body:not(.lang-en) .faq-item[data-lang="vi"] { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ Hero ═══════════════════════════════════════════════════════ -->
+  <header class="hero">
+    <div class="hero-icon">📝</div>
+    <h1 data-lang="vi">Ghi Chú – Hỗ trợ</h1>
+    <h1 data-lang="en">Ghi Chú – Support</h1>
+    <p data-lang="vi">
+      Ứng dụng ghi chú thông minh tích hợp AI. Chúng tôi luôn sẵn sàng hỗ trợ bạn!
+    </p>
+    <p data-lang="en">
+      Smart AI-powered note-taking app. We're here to help!
+    </p>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('vi')" id="btn-vi">🇻🇳 Tiếng Việt</button>
+      <button class="lang-btn" onclick="switchLang('en')" id="btn-en">🇬🇧 English</button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ═══ Contact ════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-title" data-lang="vi">Liên hệ hỗ trợ</div>
+      <div class="section-title" data-lang="en">Contact Support</div>
+      <div class="card">
+        <a href="mailto:letandung2711@gmail.com" class="contact-item" data-lang="vi">
+          <span class="contact-icon email">📧</span>
+          <div>
+            <div class="contact-label">Email hỗ trợ</div>
+            <div class="contact-value">letandung2711@gmail.com</div>
+          </div>
+          <span class="contact-arrow">›</span>
+        </a>
+        <a href="mailto:letandung2711@gmail.com" class="contact-item" data-lang="en">
+          <span class="contact-icon email">📧</span>
+          <div>
+            <div class="contact-label">Support Email</div>
+            <div class="contact-value">letandung2711@gmail.com</div>
+          </div>
+          <span class="contact-arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ═══ FAQ ════════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-title" data-lang="vi">Câu hỏi thường gặp</div>
+      <div class="section-title" data-lang="en">Frequently Asked Questions</div>
+      <div class="card">
+
+        <!-- Q1 -->
+        <div class="faq-item" data-lang="vi">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>💾</span> Dữ liệu ghi chú được lưu ở đâu?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Tất cả ghi chú được lưu trữ cục bộ trên thiết bị của bạn bằng Hive database. Dữ liệu không được gửi lên bất kỳ máy chủ nào, đảm bảo sự riêng tư tuyệt đối. Hãy nhớ sao lưu thiết bị thường xuyên để tránh mất dữ liệu.
+          </div></div>
+        </div>
+        <div class="faq-item" data-lang="en">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>💾</span> Where is my note data stored?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            All notes are stored locally on your device using Hive database. No data is sent to any server, ensuring your complete privacy. Please back up your device regularly to avoid data loss.
+          </div></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item" data-lang="vi">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>🤖</span> Tính năng AI hoạt động như thế nào?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Ứng dụng sử dụng Google Gemini AI để tóm tắt nội dung và gợi ý tag tự động. Bạn cần nhập API key Gemini miễn phí trong phần Cài đặt. Nếu không có API key, ứng dụng vẫn hoạt động bình thường với chế độ AI offline (mock).
+          </div></div>
+        </div>
+        <div class="faq-item" data-lang="en">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>🤖</span> How does the AI feature work?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            The app uses Google Gemini AI for content summarization and automatic tag suggestions. You need a free Gemini API key from Settings. Without an API key, the app works normally with offline AI mode (mock).
+          </div></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item" data-lang="vi">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>🎤</span> Chuyển giọng nói thành văn bản hỗ trợ ngôn ngữ nào?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Tính năng Speech-to-Text hiện hỗ trợ tiếng Việt và tiếng Anh. Ứng dụng cần quyền truy cập microphone để sử dụng tính năng này. Bạn có thể cấp quyền trong phần Cài đặt hệ thống.
+          </div></div>
+        </div>
+        <div class="faq-item" data-lang="en">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>🎤</span> Which languages are supported for voice-to-text?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            The Speech-to-Text feature currently supports Vietnamese and English. The app requires microphone access permission for this feature. You can grant permission in your device's System Settings.
+          </div></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item" data-lang="vi">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>🗑️</span> Tôi vô tình xóa ghi chú, làm sao để khôi phục?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Ghi chú đã xóa sẽ được chuyển vào Thùng rác và giữ trong 30 ngày. Mở Thùng rác từ menu bên trái, tìm ghi chú cần khôi phục và nhấn nút khôi phục. Sau 30 ngày, ghi chú sẽ bị xóa vĩnh viễn.
+          </div></div>
+        </div>
+        <div class="faq-item" data-lang="en">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>🗑️</span> I accidentally deleted a note. How can I recover it?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Deleted notes are moved to Trash and kept for 30 days. Open Trash from the side menu, find the note you want to recover, and tap the restore button. After 30 days, notes are permanently deleted.
+          </div></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item" data-lang="vi">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>📱</span> Ứng dụng hỗ trợ những thiết bị nào?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Ghi Chú hỗ trợ Android (API 21 trở lên, tương đương Android 5.0+) và iOS (iOS 12 trở lên). Ứng dụng được tối ưu cho cả điện thoại và máy tính bảng với giao diện responsive.
+          </div></div>
+        </div>
+        <div class="faq-item" data-lang="en">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>📱</span> Which devices are supported?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Ghi Chú supports Android (API 21+, equivalent to Android 5.0+) and iOS (iOS 12+). The app is optimized for both phones and tablets with a responsive interface.
+          </div></div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item" data-lang="vi">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>🔒</span> Ứng dụng có thu thập dữ liệu cá nhân không?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Không. Ghi Chú không thu thập, lưu trữ hoặc chia sẻ bất kỳ dữ liệu cá nhân nào. Tất cả ghi chú và cài đặt được lưu cục bộ trên thiết bị. Nếu bạn sử dụng tính năng AI, nội dung ghi chú sẽ được gửi trực tiếp đến Google Gemini API để xử lý và không được chúng tôi lưu trữ.
+          </div></div>
+        </div>
+        <div class="faq-item" data-lang="en">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>🔒</span> Does the app collect personal data?
+            <span class="faq-chevron">▼</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            No. Ghi Chú does not collect, store, or share any personal data. All notes and settings are stored locally on your device. If you use the AI feature, note content is sent directly to the Google Gemini API for processing and is not stored by us.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ Features ══════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-title" data-lang="vi">Tính năng chính</div>
+      <div class="section-title" data-lang="en">Key Features</div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-emoji">📝</div>
+          <div class="feature-name" data-lang="vi">Rich Text Editor</div>
+          <div class="feature-name" data-lang="en">Rich Text Editor</div>
+          <div class="feature-desc" data-lang="vi">Đậm, nghiêng, danh sách, tùy chỉnh định dạng</div>
+          <div class="feature-desc" data-lang="en">Bold, italic, lists, custom formatting</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-emoji">🤖</div>
+          <div class="feature-name" data-lang="vi">AI Gemini</div>
+          <div class="feature-name" data-lang="en">AI Gemini</div>
+          <div class="feature-desc" data-lang="vi">Tóm tắt & gắn tag tự động</div>
+          <div class="feature-desc" data-lang="en">Auto-summarize & smart tagging</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-emoji">🎤</div>
+          <div class="feature-name" data-lang="vi">Giọng nói</div>
+          <div class="feature-name" data-lang="en">Voice Input</div>
+          <div class="feature-desc" data-lang="vi">Chuyển giọng nói thành văn bản</div>
+          <div class="feature-desc" data-lang="en">Speech-to-text in Vietnamese & English</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-emoji">🗂️</div>
+          <div class="feature-name" data-lang="vi">Thư mục & Tags</div>
+          <div class="feature-name" data-lang="en">Folders & Tags</div>
+          <div class="feature-desc" data-lang="vi">Phân loại với icon & màu sắc</div>
+          <div class="feature-desc" data-lang="en">Organize with icons & colors</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-emoji">🌙</div>
+          <div class="feature-name" data-lang="vi">Dark Mode</div>
+          <div class="feature-name" data-lang="en">Dark Mode</div>
+          <div class="feature-desc" data-lang="vi">Giao diện tối dễ chịu cho mắt</div>
+          <div class="feature-desc" data-lang="en">Easy on your eyes</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-emoji">💾</div>
+          <div class="feature-name" data-lang="vi">Auto-save</div>
+          <div class="feature-name" data-lang="en">Auto-save</div>
+          <div class="feature-desc" data-lang="vi">Tự lưu sau 800ms – không mất dữ liệu</div>
+          <div class="feature-desc" data-lang="en">Saves after 800ms – never lose data</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ System Requirements ═══════════════════════════════════ -->
+    <div class="section">
+      <div class="section-title" data-lang="vi">Yêu cầu hệ thống</div>
+      <div class="section-title" data-lang="en">System Requirements</div>
+      <div class="card">
+        <div style="padding: 20px;">
+          <div data-lang="vi">
+            <p style="margin-bottom: 8px;">• <strong>iOS:</strong> 12.0 trở lên</p>
+            <p style="margin-bottom: 8px;">• <strong>Android:</strong> 5.0 (API 21) trở lên</p>
+            <p style="margin-bottom: 8px;">• <strong>Microphone:</strong> Cần cấp quyền cho tính năng giọng nói</p>
+            <p>• <strong>Internet:</strong> Chỉ cần khi sử dụng tính năng AI (tùy chọn)</p>
+          </div>
+          <div data-lang="en">
+            <p style="margin-bottom: 8px;">• <strong>iOS:</strong> 12.0 or later</p>
+            <p style="margin-bottom: 8px;">• <strong>Android:</strong> 5.0 (API 21) or later</p>
+            <p style="margin-bottom: 8px;">• <strong>Microphone:</strong> Permission required for voice feature</p>
+            <p>• <strong>Internet:</strong> Only needed for AI feature (optional)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══ Footer ═══════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <p data-lang="vi">© 2026 Ghi Chú App. Made with ❤️ using Flutter.</p>
+    <p data-lang="en">© 2026 Ghi Chú App. Made with ❤️ using Flutter.</p>
+    <p style="margin-top: 8px;">
+      <a href="mailto:letandung2711@gmail.com">letandung2711@gmail.com</a>
+    </p>
+    <p data-lang="vi" style="margin-top: 4px; font-size: 0.75rem;">Phiên bản ứng dụng: 1.0.0</p>
+    <p data-lang="en" style="margin-top: 4px; font-size: 0.75rem;">App Version: 1.0.0</p>
+  </footer>
+
+  <!-- ═══ Scripts ══════════════════════════════════════════════════ -->
+  <script>
+    function switchLang(lang) {
+      document.body.classList.toggle('lang-en', lang === 'en');
+      document.getElementById('btn-vi').classList.toggle('active', lang === 'vi');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      // Close all open FAQ items when switching language
+      document.querySelectorAll('.faq-item.open').forEach(item => item.classList.remove('open'));
+    }
+
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      // Close all FAQ items in the same card
+      item.parentElement.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!wasOpen) {
+        item.classList.add('open');
+      }
+    }
+
+    // Auto-detect browser language
+    if (navigator.language && !navigator.language.startsWith('vi')) {
+      switchLang('en');
+    }
+  </script>
+
+</body>
+</html>
